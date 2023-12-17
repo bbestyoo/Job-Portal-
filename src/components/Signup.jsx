@@ -1,10 +1,24 @@
-import { FaUser,FaLock,} from "react-icons/fa";
+import { FaUser, FaLock } from "react-icons/fa";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import { useState } from "react";
 
 
 function Signup() {
+
+  const [password, setPassword] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+
+  function clickEyeButton()  {
+    setIsVisible((prevVisible) => !prevVisible);
+        
+
+  }
+
+
   return (
     <div>
       <div className="w-fit m-auto my-28">
@@ -14,7 +28,7 @@ function Signup() {
             <input
               type="name"
               placeholder="enter your Username"
-              className="w-72"
+              className="w-72 outline-none"
             />
             <FaUser />
           </div>
@@ -22,13 +36,24 @@ function Signup() {
             <input
               type="email"
               placeholder="enter your email address"
-              className="w-72"
+              className="w-72 outline-none "
             />
             <MdAlternateEmail />
           </div>
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
-            <input type="password" placeholder="password" className="w-72" />
-            <FaLock />
+            <input
+               type={isVisible? "text" : "password"}
+              placeholder="password"
+              className="w-72 outline-none "
+              onChange={(e)=>{setPassword(e.target.value)}}
+            />
+            {password.length <= 0 ? (
+              <FaLock />
+            ) : (
+              <button onClick={clickEyeButton}>
+                {isVisible ? <IoMdEyeOff /> : <IoMdEye />}
+              </button>
+            )}
           </div>
           <div className="flex justify-between">
             <label>
@@ -42,7 +67,9 @@ function Signup() {
           </button>
           <div className="flex justify-center">
             <p>Already have an account?</p>
-            <p className="font-bold"><Link to="/login">Login</Link></p>
+            <p className="font-bold">
+              <Link to="/login">Login</Link>
+            </p>
           </div>
         </div>
       </div>

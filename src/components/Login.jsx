@@ -1,8 +1,26 @@
-import { FaUser,FaLock} from "react-icons/fa";
+import { FaUser, FaLock  } from "react-icons/fa";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
 import Signup from "./Signup";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
+
+  const [password, setPassword] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+
+  function clickEyeButton()  {
+    setIsVisible((prevVisible) => !prevVisible);
+     
+
+    
+
+  }
+
+
+
+
   return (
     <div>
       <div className="w-fit m-auto my-28">
@@ -12,13 +30,33 @@ function Login() {
             <input
               type="email"
               placeholder="enter your email address"
-              className="w-72 border-none"
+              className="w-72 outline-none "
             />
             <FaUser />
           </div>
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
-            <input type="password" placeholder="password" className="w-72" />
-            <FaLock />
+            <input
+              type={isVisible? "text" : "password"}
+              placeholder="password"
+              className="w-72 outline-none "
+              onChange={(e)=>{setPassword(e.target.value)}}
+            />
+         {password.length <= 0 ? 
+        
+          <FaLock />
+        
+       : (
+        <button onClick={clickEyeButton}>
+          {isVisible ? <IoMdEyeOff /> : <IoMdEye />}
+        </button>
+      )}
+
+             
+
+            
+          
+            
+            
           </div>
           <div className="flex justify-between">
             <label>
@@ -32,7 +70,9 @@ function Login() {
           </button>
           <div className="flex justify-center">
             <p>Dont have an account?</p>
-            <p className="font-bold"><Link to="/signup">Register</Link></p>
+            <p className="font-bold">
+              <Link to="/signup">Register</Link>
+            </p>
           </div>
         </div>
       </div>
