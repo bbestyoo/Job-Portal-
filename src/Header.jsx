@@ -34,7 +34,7 @@ export default function Header() {
               <Link to="/login">
                 <button
                  
-                  className="p-1 px-3 text-white border border-gray-300 bg-primary rounded-2xl"
+                  className="p-1 px-3 text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover"
                 >
                   Login
                 </button>
@@ -44,7 +44,7 @@ export default function Header() {
               <Link to="/signup">
                 <button
                  
-                  className="p-1 px-3 text-white border border-gray-300 bg-primary rounded-2xl"
+                  className="p-1 px-3 text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover"
                 >
                   Signup
                 </button>

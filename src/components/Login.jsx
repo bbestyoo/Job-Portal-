@@ -25,7 +25,7 @@ function Login() {
     <div>
       <div className="w-fit m-auto my-28">
         <div className="border border-gray-400 py-20 px-10 rounded-3xl">
-          <p className="text-3xl font-medium mb-5">Login</p>
+          <p className="text-3xl font-medium mb-5 ">Login</p>
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
             <input
               type="email"
@@ -65,7 +65,7 @@ function Login() {
             </label>
             <p>Forget Password?</p>
           </div>
-          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl">
+          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
             Login
           </button>
           <div className="flex justify-center">

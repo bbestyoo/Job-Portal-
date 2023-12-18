@@ -62,7 +62,7 @@ function Signup() {
             </label>
             <p>Forget Password?</p>
           </div>
-          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl">
+          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
             Signup
           </button>
           <div className="flex justify-center">
