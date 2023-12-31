@@ -5,6 +5,7 @@ import Header from "./header";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { PopularJobs } from "./components/Jobs";
+import JobDetails from "./components/JobDetails";
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
       <Route path="/browse jobs" element={<PopularJobs/>}></Route>
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/signup" element={<Signup/>}></Route>
+      <Route path="/jobs">
+        <Route path=":id"  element={<JobDetails/>}></Route>
+
+      </Route>
     </Routes>
    
     </div>

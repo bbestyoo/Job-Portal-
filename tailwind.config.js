@@ -11,7 +11,7 @@ export default {
         "secondary": "#E9F1FA",
         "extra": "FFFAF0",
         "hover": "#6495ED",
-        "footer" : "#E1EBEE"
+        "footer" : "#f5f4fa"
       }
     },
   },

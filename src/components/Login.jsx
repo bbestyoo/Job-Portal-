@@ -3,19 +3,23 @@ import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import Signup from "./Signup";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useState, } from "react";
+import { useEffect, useState, } from "react";
 import axios from "axios";
 
 function Login() {
 
-  
+  console.log("render...")
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
 
 
   const navigate = useNavigate()
 
+  
+
   function handlesubmit(e){
+
+    
     e.preventDefault()
     axios.post("http://localhost:8000/api/login", {
       email: e.target.email.value,
@@ -34,8 +38,9 @@ function Login() {
 
     })
 
-
+  
   }
+
 
   function clickEyeButton()  {
     setIsVisible((prevVisible) => !prevVisible);
@@ -52,7 +57,7 @@ function Login() {
     <div>
     
       <div className="w-fit m-auto my-28">
-        <form onSubmit={handlesubmit} className="border border-gray-400 py-20 px-10 rounded-3xl ">
+        <form  className="border border-gray-400 py-20 px-10 rounded-3xl ">
           <p className="text-3xl font-medium mb-5 ">Login</p>
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
             <input
@@ -99,7 +104,7 @@ function Login() {
             </label>
             <p>Forget Password?</p>
           </div>
-          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
+          <button onClick={handlesubmit} className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
             Login
           </button>
           <div className="flex justify-center">
