@@ -1,7 +1,7 @@
 import "./App.css";
 import {Route,Routes } from "react-router-dom";
 import Home from "./components/Home";   
-import Header from "./header";
+import Header from "./Header";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { PopularJobs } from "./components/Jobs";
