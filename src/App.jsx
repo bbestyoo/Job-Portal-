@@ -8,13 +8,14 @@ import JobDetails from "./components/JobDetails";
 import Header from "./components/Header";
 
 
+
 function App() {
   return (
     <div>
 
     <Header/>
     
-    
+
     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/browse jobs" element={<PopularJobs/>}></Route>

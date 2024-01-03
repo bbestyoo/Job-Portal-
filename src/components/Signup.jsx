@@ -2,12 +2,21 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import { useState } from "react";
 
 
 function Signup() {
+
+    const navigate = useNavigate()
+
+  // function handleSignup (){
+
+  //   navigate("/login")
+
+
+  // }
 
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -27,6 +36,7 @@ function Signup() {
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
             <input
               type="name"
+              required
               placeholder="enter your Username"
               className="w-72 outline-none"
             />
@@ -35,6 +45,7 @@ function Signup() {
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
             <input
               type="email"
+              required
               placeholder="enter your email address"
               className="w-72 outline-none "
             />
@@ -44,6 +55,7 @@ function Signup() {
             <input
                type={isVisible? "text" : "password"}
               placeholder="password"
+              required
               className="w-72 outline-none "
               onChange={(e)=>{setPassword(e.target.value)}}
             />
@@ -62,7 +74,8 @@ function Signup() {
             </label>
             <p>Forget Password?</p>
           </div>
-          <button className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
+          <button 
+          className="w-full bg-primary rounded-3xl my-4 p-2 font-bold text-white text-xl hover:bg-hover">
             Signup
           </button>
           <div className="flex justify-center">

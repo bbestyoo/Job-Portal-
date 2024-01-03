@@ -2,8 +2,13 @@ import { IoSearch } from "react-icons/io5";
 
 import { PopularCategories, PopularJobs } from "./Jobs";
 import Footer from "./Footer";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+
+  const userDetails = useSelector((state)=>state.user.value)
+  console.log("asdasd",userDetails)
+
   return (
     <div className="mt-20 ">
       <div className="h-[75vh]">

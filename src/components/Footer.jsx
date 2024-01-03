@@ -20,7 +20,7 @@ export default function Footer() {
           </button>
         </div>
         <div className="">
-          <div className="flex justify-between p-5 bg-footer pt-20">
+          <div className="flex justify-between p-5 bg-footer pt-20 pl-16 pr-10">
             <div className=" p-1 py-5 rounded-lg text-left text-xs w-1/3 ">
         <span>
             <p> Since its inception in 2023, this site has been at the forefront
