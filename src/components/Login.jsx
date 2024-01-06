@@ -37,7 +37,7 @@ function Login() {
       console.log("data",res.data)
       console.log("user",res.data.user)
 
-      dispatch(setUserDetails(res.data.user))      //dispatch calls a reducer that may take a state
+      dispatch(setUserDetails(res.data.user))      //dispatch calls a reducer that may take a state res.data.user is a state jun xai state.value ma basxa ra action xai setUserDetails garne bayo  action
       localStorage.setItem("token",res.data.token)
       navigate("/")
       

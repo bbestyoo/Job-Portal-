@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchJobDetails } from "../../redux/JobSlice";
 
 export default function Search({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchBox, setSearchBox] = useState(false);
+  const dispatch = useDispatch();
+  // const jobDetails = useSelector((state) => state.jobs.value);
+
+//   useEffect(() => {
+//     dispatch(fetchJobDetails());
+    
+//   }, [dispatch]);
+//  console.log("job details",fetchJobDetails)
+
+  
 
   const handleOnchange = (e) => {
     const query = e.target.value;
@@ -18,30 +30,32 @@ export default function Search({ onSearch }) {
     }
   };
   const handleOnFocus = (e) => {
-    
-
     const length = e.target.value.length;
     {
       length > 0 && setSearchBox(true);
     }
   };
   const handleOnBlur = (e) => {
-    
-
     const length = e.target.value.length;
     {
       length < 1 && setSearchBox(false);
     }
   };
 
+
+
   return (
     <>
-      <div className={` ${
-        searchBox ? "h-20 w-full px-20"  :"h-16 px-10" 
-
-      } p-1 inline-block ps-5  text-l rounded-3xl  transition-all duration-300 shadow-lg`}>
-        <div className={` ${
-        searchBox ? "justify-between text-xl": "gap-3"   } flex h-full max-w-full items-center`}>
+      <div
+        className={` ${
+          searchBox ? "h-20 w-full px-20" : "h-16 px-10"
+        } p-1 inline-block ps-5  text-l rounded-3xl  transition-all duration-300 shadow-lg`}
+      >
+        <div
+          className={` ${
+            searchBox ? "justify-between text-xl" : "gap-3"
+          } flex h-full max-w-full items-center`}
+        >
           <IoSearch className="text-4xl transition-transform transform hover:scale-110" />
           <input
             onChange={handleOnchange}

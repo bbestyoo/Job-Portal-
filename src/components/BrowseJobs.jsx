@@ -3,6 +3,8 @@ import Search from "./Search";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 
 export function PopularCategories() {
   const [getHotJobs, setHotJobs] = useState([]);
@@ -53,6 +55,8 @@ export function PopularCategories() {
 export function PopularJobs({searchQuery}) {
   const [getJobs, setJobs] = useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     console.log('searchquery:',searchQuery)
@@ -60,6 +64,7 @@ export function PopularJobs({searchQuery}) {
       .get("http://localhost:8000/api/getJob")
       .then((res) => {
         const allJobs = res.data.jobs
+        
         const filteredJobs = searchQuery
         ? allJobs.filter((job) =>
             job.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -72,7 +77,7 @@ export function PopularJobs({searchQuery}) {
       console.log(err);
       });
   }, [searchQuery]);
-
+  
   return (
     <>
       <div className="px-40">

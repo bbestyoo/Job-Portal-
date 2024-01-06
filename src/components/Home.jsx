@@ -7,7 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   
+  
+
   const navigate = useNavigate()
+
+  const userDetails = useSelector((state)=>state.user.value)
+  console.log("asdasd",userDetails)
 
   const handleFocus = (e) => {
     const length = e.target.value.length
@@ -19,9 +24,6 @@ export default function Home() {
 
   }
 
-  const userDetails = useSelector((state)=>state.user.value)
-  console.log("asdasd",userDetails)
-
   return (
     <div className="mt-20 ">
       <div className="h-[75vh]">
@@ -32,7 +34,8 @@ export default function Home() {
         <p className=" text-xl mb-20">
           10000 Jobs registered and 10000 employed
         </p>
-        <div onChange={handleFocus}>
+
+       <div onChange={handleFocus}>
 
       <Search/>
         </div>

@@ -23,25 +23,43 @@ export default function Header() {
     <div>
       <header className="bg-secondary">
         <nav className="flex justify-between py-4 pl-16 pr-10">
+                
           <ul>
             <li>
               <NavLink to="">Logo</NavLink>
             </li>
           </ul>
-          <ul className="flex gap-6">
+          <ul className="flex gap-14">
             <li>
               <NavLink   to="/">Home</NavLink>
             </li>
             <li>
               <NavLink  to="/browse jobs">Browse Jobs</NavLink>
             </li>
+          
+          
+            {
+              userDetails? (
+                <>
             <li>
+              <NavLink   to="/applied jobs">Applied Jobs </NavLink>
+            </li>
+                </>
+              ):(
+                <>
+                 <li>
               <NavLink   to="/">About Us </NavLink>
             </li>
+                </>
+              )
+            }
+          
+          
             <li>
               <NavLink   to="/">FAQs</NavLink>
             </li>
           </ul>
+          
           <ul className="flex gap-3 items-center">
 
             {userDetails?.username ? (

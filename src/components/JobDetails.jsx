@@ -1,16 +1,32 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FcRating } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsCalendarDate } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export default function JobDetails() {
   const [getJobById, setJobById] = useState([]);
+  const navigate = useNavigate()
+  const userDetails = useSelector((state)=>state.user.value)
 
   const params = useParams();
   const jobId = params.id;
   console.log(params);
+
+  function handleClick (){
+    userDetails ? (
+      <>
+        {toast.success("Applied Successfully", { pauseOnHover: false })}
+        {navigate("/appliedJobs")}
+      </>
+    ) : (
+      navigate("/login")  
+    )
+    }
 
   useEffect(() => {
     axios
@@ -53,7 +69,9 @@ export default function JobDetails() {
             <BsCalendarDate />
             <p>Apply Before: {getJobById.deadline_date}</p>
             <p>Applicants:10</p>
-            <button className="ml-20 p-3 px-8 font-semibold text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover">Apply Now</button>
+            <ToastContainer />
+            <button onClick={handleClick}
+              className="ml-20 p-3 px-8 font-semibold text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover">Apply Now</button>
             </div>
             
 
