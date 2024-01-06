@@ -3,6 +3,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+
 export default function Footer() {
   const [showMore, setShowMore] = useState(false);  
 
@@ -19,7 +20,7 @@ export default function Footer() {
             Subscribe
           </button>
         </div>
-        <div className="">
+        <div className="background-image: bg-footer">
           <div className="flex justify-between p-5 bg-footer pt-20 pl-16 pr-10">
             <div className=" p-1 py-5 rounded-lg text-left text-xs w-1/3 ">
         <span>

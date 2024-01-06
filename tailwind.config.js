@@ -12,6 +12,9 @@ export default {
         "extra": "FFFAF0",
         "hover": "#6495ED",
         "footer" : "#f5f4fa"
+      },
+      backgroundImage:{
+        "bg-footer": "url('/')"
       }
     },
   },
