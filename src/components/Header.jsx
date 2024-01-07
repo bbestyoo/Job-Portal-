@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import {logoutUser} from "../../redux/UserSlice"
+import logo from "../assets/logo.png"
 // import Modal from "react-modal"
 
 export default function Header() {
@@ -22,11 +23,11 @@ export default function Header() {
   return (
     <div>
       <header className="bg-secondary">
-        <nav className="flex justify-between py-4 pl-16 pr-10">
+        <nav className="flex justify-between py-4 pl-16 pr-10 items-center">
                 
           <ul>
             <li>
-              <NavLink to="">Logo</NavLink>
+              <NavLink className="flex items-center font-bold" to="">JOB PORTAL<img className="h-10" src={logo} alt="oops" /></NavLink>
             </li>
           </ul>
           <ul className="flex gap-14">
