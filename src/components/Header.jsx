@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import {logoutUser} from "../../redux/UserSlice"
 import logo from "../assets/logo.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 // import Modal from "react-modal"
 
 export default function Header() {
@@ -10,7 +14,6 @@ export default function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const userDetails = useSelector((state)=>state.user.value)
-  console.log("asdasd",userDetails)
 
   function handleLogout (){
     navigate("/")
@@ -22,9 +25,10 @@ export default function Header() {
 
   return (
     <div>
+          <ToastContainer />  
       <header className="bg-secondary">
         <nav className="flex justify-between py-4 pl-16 pr-10 items-center">
-                
+
           <ul>
             <li>
               <NavLink className="flex items-center font-bold" to="">JOB PORTAL<img className="h-10" src={logo} alt="oops" /></NavLink>
@@ -56,9 +60,6 @@ export default function Header() {
             }
           
           
-            <li>
-              <NavLink   to="/">FAQs</NavLink>
-            </li>
           </ul>
           
           <ul className="flex gap-3 items-center">

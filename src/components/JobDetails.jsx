@@ -5,8 +5,6 @@ import { FcRating } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsCalendarDate } from "react-icons/bs";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
 
 export default function JobDetails() {
   const [getJobById, setJobById] = useState([]);
@@ -69,7 +67,6 @@ export default function JobDetails() {
             <BsCalendarDate />
             <p>Apply Before: {getJobById.deadline_date}</p>
             <p>Applicants:10</p>
-            <ToastContainer />
             <button onClick={handleClick}
               className="ml-20 p-3 px-8 font-semibold text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover">Apply Now</button>
             </div>

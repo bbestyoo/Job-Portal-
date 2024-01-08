@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchJobDetails } from "../../redux/JobSlice";
 
 export default function Search({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
