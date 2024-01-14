@@ -48,7 +48,7 @@ export default function Search({ onSearch }) {
       <div
         className={` ${
           searchBox ? "h-20 w-full px-20" : "h-16 px-10"
-        } p-1 inline-block ps-5  text-l rounded-3xl  transition-all duration-300 shadow-lg`}
+        } p-1 inline-block ps-5  text-l rounded-3xl  transition-all duration-300 shadow-lg bg-white`}
       >
         <div
           className={` ${

@@ -25,8 +25,8 @@ function Login() {
 
   function handlesubmit(e){
 
-    console.log(e.target.email.value,e.target.password.value)
     e.preventDefault()
+    console.log("gg",e.target.email.value,e.target.password.value)
     axios.post("http://localhost:8000/api/login", {
       email: e.target.email.value,
       password: e.target.password.value
@@ -40,13 +40,7 @@ function Login() {
       dispatch(setUserDetails(res.data.user))      //dispatch calls a reducer that may take a state res.data.user is a state jun xai state.value ma basxa ra action xai setUserDetails garne bayo  action
       localStorage.setItem("token",res.data.token)
       navigate("/")
-      
-
-
-
-
-
-      
+           
       
     })
     .catch((err)=>{
@@ -75,7 +69,7 @@ function Login() {
     <div>
     
       <div className="w-fit m-auto my-28">
-        <form onSubmit={handlesubmit} className="border border-gray-400 py-20 px-10 rounded-3xl ">
+        <form onSubmit={(e) => { handlesubmit(e) }} className="border border-gray-400 py-20 px-10 rounded-3xl ">
           <p className="text-3xl font-medium mb-5 ">Login</p>
           <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
             <input

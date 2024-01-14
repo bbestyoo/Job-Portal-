@@ -5,8 +5,12 @@ import { FcRating } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsCalendarDate } from "react-icons/bs";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function JobDetails() {
+  const [buttonStyle, setButtonStyle] = useState({ cursor: "pointer" });
   const [getJobById, setJobById] = useState([]);
   const navigate = useNavigate()
   const userDetails = useSelector((state)=>state.user.value)
@@ -16,28 +20,45 @@ export default function JobDetails() {
   console.log(params);
 
   function handleClick (){
-    userDetails ? (
-      <>
-        {toast.success("Applied Successfully", { pauseOnHover: false })}
-        {navigate("/appliedJobs")}
-      </>
-    ) : (
-      navigate("/login")  
-    )
+    if (userDetails) {
+      if (userDetails.role === "job-seeker") {
+        toast.success("Applied Successfully", {
+          pauseOnHover: false,
+          autoClose: 2000,
+        });
+        navigate("/appliedJobs");
+      } else {
+        toast.warning("You need to be a Job Seeker to apply", {
+          pauseOnHover: false,
+          autoClose: 2000,
+        });
+        // Set pointer to "not-allowed" when there's no job seeker
+        setButtonStyle({ cursor: 'not-allowed' });
+      }
+    } else {
+      toast.error("Login required", {
+        pauseOnHover: false,
+        autoClose: 2000,
+      });
+      // Set pointer to "not-allowed" when there's no job seeker
+      navigate("/login")
     }
+  }
+  
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/getJobById/${jobId}`)
       .then((res) => {
+        console.log("job indv",res.data);
         setJobById(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); 
       });
   }, []);
 
+  
   return (
     <>
       <div className="bg-footer h-900 p-10">
@@ -67,7 +88,9 @@ export default function JobDetails() {
             <BsCalendarDate />
             <p>Apply Before: {getJobById.deadline_date}</p>
             <p>Applicants:10</p>
-            <button onClick={handleClick}
+            <button 
+              style={buttonStyle}
+              onClick={handleClick}
               className="ml-20 p-3 px-8 font-semibold text-white border border-gray-300 bg-primary rounded-2xl hover:bg-hover">Apply Now</button>
             </div>
             
