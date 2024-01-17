@@ -26,7 +26,7 @@ export default function JobDetails() {
           pauseOnHover: false,
           autoClose: 2000,
         });
-        navigate("/appliedJobs");
+        navigate("/");
       } else {
         toast.warning("You need to be a Job Seeker to apply", {
           pauseOnHover: false,
@@ -50,7 +50,7 @@ export default function JobDetails() {
     axios
       .get(`http://localhost:8000/api/getJobById/${jobId}`)
       .then((res) => {
-        console.log("job indv",res.data);
+        console.log("job indasdv",res.data);
         setJobById(res.data);
       })
       .catch((err) => {
@@ -69,7 +69,14 @@ export default function JobDetails() {
               <FcRating />
               <p className="pl-4 border-s-2 leading-4">9 Reviews</p>
             </div>
-            <p className="mb-2">Description:{getJobById.description}</p>
+            <div>
+            <h2 className=" font-semibold text-2xl mb-1">Job Description
+            :</h2>
+
+            <p className="mb-2" dangerouslySetInnerHTML={{ __html: getJobById.description }}></p>
+            </div>
+            
+
             <hr />
             <div className="flex gap-5 items-center mb-3 mt-2">
                 <p className=" pr-3 border-e-2 leading-2">{getJobById.experience}</p>

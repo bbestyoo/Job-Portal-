@@ -22,7 +22,7 @@ function BarChart({ chartData }) {
 
   return (
     <>
-      <div className=" bg-[#F6F7FA] text-black text-center text-2xl underline-offset-4 underline">
+      <div className=" mt-16 bg-[#F6F7FA] text-black text-center text-2xl underline-offset-4 underline">
         Chart Below
       </div>
 

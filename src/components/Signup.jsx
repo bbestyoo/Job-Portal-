@@ -106,9 +106,9 @@ function Signup() {
         navigate("/login");
       })
       .catch((Err) => {
-        console.log(Err);
+        // console.log(Err);
         setError({});
-        console.log("hello error");
+        // console.log("hello error");
         //Err.response.data.errors[0].msg)
         if (Err.response?.data.errors) {
           const errorArray = Err.response.data.errors;
@@ -127,15 +127,9 @@ function Signup() {
 
           setError({ ...temp });
 
-          // setError(Err.response?.data.errors[0].msg);
         }
 
-        // if (error.repeat_password) {
-        //   setError({
-        //     ...error,
-        //     repeat_password: "Both password should be same",
-        //   });
-        // }
+    
         if (Err.response.data.msg) {
           setError({ email: Err.response.data.msg });
         }
@@ -148,35 +142,49 @@ function Signup() {
   return (
     <>
      <div>
-      <div className="w-fit m-auto my-10">
+      <div className="w-fit m-auto my-24  ">
         <div className="border border-gray-400 py-10 px-10 rounded-3xl">
         <form  onSubmit={(e)=>handleSubmit(e)}
           action="#"
         >
           <p className="text-3xl font-medium mb-5">Signup</p>
-          
-          <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
-          <input type="username" name="username" required placeholder="enter your Username" className="w-72 outline-none" />
+          <div className="text-left">
+
+          <div className="flex border items-center p-2 px-4 rounded-3xl mt-4">
+
+          <input type="username" name="username"  placeholder="enter your Username" className="w-72 outline-none" />
+
             <FaUser />
+           
           </div>
-          <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
+          <small className="text-red-800">{error.username}</small>
+          </div>
+          <div className="text-left">
+
+          <div className="flex border items-center p-2 px-4 rounded-3xl mt-4">
             <input
               type="email"
               name="email"
               // value={"mel@mel.com"}
-              required
+              // required
               placeholder="enter your email address"
               className="w-72 outline-none "
             />
             <MdAlternateEmail />
+            
+            {/* <small>{error}</small> */}
           </div>
-          <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
+          <small className="text-red-800">{error.email}</small>
+              </div>
+              <div className="text-left">
+
+          <div className="flex border items-center p-2 px-4 rounded-3xl mt-4">
             <input
               type={isVisible ? "text" : "password"}
               name="password"
               // value={"password"}
               placeholder="password"
-              required
+              // required
               className="w-72 outline-none "
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -190,19 +198,26 @@ function Signup() {
               </button>
             )}
           </div>
-          <div className="flex border items-center p-2 px-4 rounded-3xl my-4">
+          <small className="text-red-800">{error.password}</small>
+          
+        </div>
+        <div className="text-left">
+
+          <div className="flex border items-center p-2 px-4 rounded-3xl mt-4">
             <input
               type="password"
               name="repeat_password"
               // value={"password"}
               placeholder="repeat-password"
-              required
+              // required
               className="w-72 outline-none "
               
             />
              <FaLock />
            </div>
-          <div className="flex flex-col items-start">
+           <small className="text-red-800">{error.repeat_password}</small>
+           </div>
+          <div className="flex flex-col items-start mt-3">
             <label className="px-3" htmlFor="role">
               Select Role:{" "}
             </label>
@@ -236,7 +251,7 @@ function Signup() {
                 className=" p-4 block w-full rounded-3xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 "
               />
             </div>
-            <small className="text-red-800"></small>
+            <small className="text-red-800">{error.image}</small>
           </div>
 
           <div className="flex justify-between">

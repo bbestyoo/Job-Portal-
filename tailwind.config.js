@@ -14,7 +14,8 @@ export default {
         "footer" : "#f5f4fa"
       },
       backgroundImage:{
-        "bg-footer": "url('/')"
+        image: "url('/bgjb.jpg')"
+        
       }
     },
   },

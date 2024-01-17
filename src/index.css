@@ -8,3 +8,33 @@
   box-sizing: border-box;
  
 }
+
+.rc-pagination {
+  display: flex;
+  gap: 15px;
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rc-pagination li {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: #E9F1FA;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 30px;
+  font-size: small;
+}
+.rc-pagination-options {
+  display: none;
+  height: 10px;
+}
+.rc-pagination-item-active {
+  background-color: "#E9F1FA";
+}
+.rc-pagination-disabled {
+  cursor: no-drop !important;
+  opacity: 0.5;
+}
+

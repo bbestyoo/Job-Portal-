@@ -13,6 +13,7 @@ import { setUserDetails } from "../redux/UserSlice";
 import axios from "axios";
 import { SingleCategory } from "./components/Categories";
 import Chart from "./charts/Charts";
+import JobEdit from "./components/Jobs/EditJob";
 
 
 
@@ -53,10 +54,9 @@ function App() {
 
 
   return (
-    <div>
+    <div className="overflow-hidden">
 
-    <Header/>
-    
+      <Header/>
 
     <Routes>
       <Route path="/" element={<Home/>}></Route>
@@ -66,6 +66,7 @@ function App() {
       <Route path="/jobs">
         <Route path="" element={<SingleCategory/>}></Route>
         <Route path=":id"  element={<JobDetails/>}></Route>
+        <Route path="/jobs/editJob/:id"  element={<JobEdit/>}></Route>
         {/* <Route path="/category"  element={<JobDetails/>}></Route> */}
 
       </Route>

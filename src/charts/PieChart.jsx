@@ -20,7 +20,7 @@ function PieChart({ chartData }) {
 
   return (
     <>
-      <div className=" bg-[#F6F7FA] py-6 text-black text-center text-2xl ">
+      <div className="mt-16 bg-[#F6F7FA] py-6 text-black text-center text-2xl ">
         Chart Below
       </div>
 

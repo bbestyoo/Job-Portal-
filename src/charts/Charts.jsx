@@ -17,7 +17,7 @@ function Chart() {
       })
       .then((res) => {
         setChartData(res.data);
-        console.log(res.data);
+        console.log("chart",res.data);
       })
       .catch((err) => console.log(err));
   }, []);
