@@ -78,9 +78,7 @@ function JobEdit() {
   }
   return (
     <>
-      {userDetail._id !== jobData.createdBy ? (
-        toast.error("Unauthorized")
-      ) : (
+      
         <>
           <ToastContainer />
           <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">

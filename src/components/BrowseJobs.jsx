@@ -206,7 +206,7 @@ export default function BrowseJobs() {
   const [currentSearchParams, setSearchParams] = useSearchParams();
   const [paginationData, setPaginationData] = useState({
     total: 10,
-    page: 1,
+    Page: 1,
     perPage: 5,
   });
   const params = useLocation();
@@ -220,6 +220,7 @@ export default function BrowseJobs() {
       .get(`http://localhost:8000/api/getJob/${params.search}`)
       .then((res) => {
         setjobs(res.data.jobs[0].data);
+        console.log("resdata",res.data.jobs[0])
         if (res.data.jobs[0].metadata[0]) {
           setPaginationData(res.data.jobs[0].metadata[0]);
         }
@@ -363,10 +364,10 @@ export default function BrowseJobs() {
             pageSize={paginationData.perPage}
             prevIcon="<"
             nextIcon=">"
-            current={paginationData.page}
+            current={paginationData.Page}
             onChange={(pgNumber) => {
               console.log(pgNumber);
-              currentSearchParams.set("page", pgNumber);
+              currentSearchParams.set("Page", pgNumber);
               setSearchParams(currentSearchParams);
             }}
             showTotal={(total, range) =>

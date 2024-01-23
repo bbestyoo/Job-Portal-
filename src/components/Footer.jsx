@@ -42,7 +42,7 @@ export default function Footer() {
             
         {showMore && (
           <>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam veniam, similique pariatur veritatis quos nisi eum nulla id vitae et saepe voluptatibus recusandae itaque voluptas quasi fugit repudiandae iste voluptate.</p>
+          <p>Great Job! You clicked on read more !!! Follow on ig Link somewhere</p>
             <Link onClick={readMore} className="text-primary">
               Read less
             </Link>

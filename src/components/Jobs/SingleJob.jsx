@@ -17,6 +17,7 @@ export const SingleJob = ({jobs, handleDelete}) => {
     
     const navigate = useNavigate();
     const userDetails = useSelector((state) => state.user.value);
+    console.log("user",userDetails)
 
 
   return (
@@ -55,14 +56,14 @@ export const SingleJob = ({jobs, handleDelete}) => {
                       onClick={() => {
                         if (userDetails?._id == jobs?.createdBy) {
                           // Navigate to the edit page if user is authorized
+                          console.log("sdde",userDetails,"asdasd",jobs.createdBy)
                           navigate(`/jobs/editJob/${jobs._id}`);
                         } else {
-                          // Show an error toast if user is not authorized
-                          toast.error("Unauthorized", {
+                          toast.error("Unauth", {
                             position: "top-right",
                             autoClose: 1500,
                             hideProgressBar: false,
-                            closeOnClick: true,
+                            closeOnClick: true, 
                             draggable: true,
                             progress: undefined,
                             theme: "dark",
@@ -75,7 +76,7 @@ export const SingleJob = ({jobs, handleDelete}) => {
                      onClick={() => {
                       if (jobs.createdBy !== userDetails._id) {
 
-                        toast.error("Unauthorized", {
+                        toast.error("Del Unauth", {
                           position: "top-right",
                           autoClose: 1500,
                           hideProgressBar: false,
