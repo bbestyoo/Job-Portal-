@@ -49,7 +49,7 @@ export default function Header() {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <ToastContainer />
       <header  
     
