@@ -11,13 +11,12 @@ import { AllRoutes } from "./Routes/AllRoutes";
 
 
 function App() {
-  const userDetails = useSelector((state) => state.user.value);
-  console.log("userdet", userDetails);
   const token = localStorage.getItem("token");
   console.log(token);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("lilnigg")
     const fetchData = async () => {
       try {
         if (token) {
@@ -43,8 +42,11 @@ function App() {
 
 
 
-  return (
-    <AllRoutes></AllRoutes>
+  return (<>
+  
+{    console.log("11111nigag")
+}    <AllRoutes></AllRoutes>
+   </>
     // <div className="overflow-hidden">
 
     //   <Header/>
