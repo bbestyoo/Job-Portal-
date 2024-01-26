@@ -71,7 +71,7 @@ export function PopularJobs() {
   return (
     <>
       <div className="px-40">
-        <p className="text-5xl font-medium my-10">Popular Jobs</p>
+        <p className="text-5xl font-medium my-10">Popular asdasdad</p>
         {getJobs?.map((jobs) => {
           return (
             <div key={jobs._id}
