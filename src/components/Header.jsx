@@ -159,3 +159,26 @@ export default function Header() {
     </div>
   );
 }
+
+
+export function Banner(props){
+
+  return (
+    
+    <div className='relative mb-48'>
+
+    <div className='myBanner relative z-1' >
+      <img className='h-[45.5vh] w-full object-cover' src="carousel-1.jpg" alt="" />
+    </div>
+    <div className='absolute text-center  top-[50%] -translate-y-[50%]  left-[50%] -translate-x-[50%] z-50'>
+      <h1 className='text-5xl font-bold text-white' >{props.topic}</h1>
+      <section className='flex gap-2 justify-center my-8'>
+        <p className='text-white'>Home  /</p>
+        <p className='text-white'>Pages  /</p>
+        <p className='text-yellow-400'>{props.topic}</p>
+      </section>
+    </div>
+    </div>
+    
+  )
+}
