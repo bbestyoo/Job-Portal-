@@ -16,7 +16,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("lilnigg")
     const fetchData = async () => {
       try {
         if (token) {
