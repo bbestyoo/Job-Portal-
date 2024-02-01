@@ -6,6 +6,8 @@ import { PopularCategories, PopularJobs } from "./BrowseJobs";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
+export function Category({ Category, logo }) {
+}
 export default function Home() {
   
   
