@@ -69,5 +69,53 @@ export default function Home() {
 }
 
 
+export function PopularCategories() {
+  const [getHotJobs, setHotJobs] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/getHotJob")
+      .then((res) => {
+        setHotJobs(res.data);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log(getHotJobs);
+
+  return (
+    <>
+      <div className="bg-secondary mt-20 p-5 pb-28">
+        <p className="text-5xl font-medium my-10">Popular categories</p>
+
+        <div className="flex flex-wrap justify-between gap-10 px-40">
+          {getHotJobs?.map((jobs) => {
+            return (
+              <div
+                key={jobs._id}
+                className="flex border border-gray-400 rounded-lg p-4 items-center w-1/3 "
+              >
+                <div>react icons</div>
+                <div>
+                  <p className="font-medium text-xl">
+                    {jobs.title} <br /> {jobs.job_type}
+                  </p>
+                  <p className="font-light text-sm">{jobs.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* <....................jobs part> */}
+
+        
+      </div>
+    </>
+  );
+}
+
 
 
