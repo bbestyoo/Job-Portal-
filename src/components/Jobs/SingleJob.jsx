@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const url = "https://job-portal-server-tvif.onrender.com/";
+const url = "https://job-portal-ten-alpha.vercel.app/";
 
 
 export const SingleJob = ({jobs, handleDelete}) => {
@@ -17,7 +17,7 @@ export const SingleJob = ({jobs, handleDelete}) => {
     
     const navigate = useNavigate();
     const userDetails = useSelector((state) => state.user.value);
-    console.log("user",userDetails)
+    // console.log("user",userDetails)
 
 
   return (
@@ -56,7 +56,7 @@ export const SingleJob = ({jobs, handleDelete}) => {
                       onClick={() => {
                         if (userDetails?._id == jobs?.createdBy) {
                           // Navigate to the edit page if user is authorized
-                          console.log("sdde",userDetails,"asdasd",jobs.createdBy)
+                          // console.log("sdde",userDetails,"asdasd",jobs.createdBy)
                           navigate(`/jobs/editJob/${jobs._id}`);
                         } else {
                           toast.error("Unauth", {

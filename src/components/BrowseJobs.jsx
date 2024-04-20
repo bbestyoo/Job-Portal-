@@ -30,7 +30,7 @@ export function PopularCategories() {
     <>
       <div className="mt-3 mb-24 px-14 bg-secondary py-6 mx-7 rounded-lg">
         <h1 className="text-3xl font-semibold my-10">Popular Categories</h1>
-        <div className=" container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5  gap-y-8  cursor-pointer   justify-items-center justify-self-center">
+        <div className=" container mx-auto grid gap-3  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5  gap-y-8  cursor-pointer   justify-items-center justify-self-center">
           <Category logo={coding} Category={"it-computer"} />
           <Category logo={bank} Category={"bank-finance"} />
           <Category logo={stocks} Category={"sales-marketing"} />
@@ -57,7 +57,7 @@ export function PopularJobs() {
 
   useEffect(() => {
     axios
-      .get("https://job-portal-server-tvif.onrender.com/api/getJob")
+      .get("https://job-portal-ten-alpha.vercel.app/")
       .then((res) => {
         console.log("popularjobsasdasd", res.data.jobs[0].data);
         const allJobs = res.data.jobs[0].data;
@@ -104,79 +104,7 @@ export function PopularJobs() {
               jobs={jobs}
             
             />
-
-            // <div
-            //   key={jobs._id}
-            //   className="flex bg-white gap-3 border border-gray-400  rounded-lg p-2 w-full items-center h-fit mb-7 bg-extra "
-            // >
-            //   <img
-            //     className="h-20 rounded-lg"
-            //     src={`${url}${jobs.creatorPic}`}
-            //     alt="oop"
-            //   />
-            //   <div className="mr-auto text-left px-6">
-            //     <p className="font-medium text-xl ">{jobs.title}</p>
-            //     <p>{jobs.type}</p>
-            //     <p className="font-light text-sm"        
-            //     dangerouslySetInnerHTML={{ __html: jobs.description }}>
-
-            //        </p>
-            //   </div>
-            //   <div className="flex items-center gap-3">
-            //     <button
-            //       onClick={() => {
-            //         navigate(`/jobs/${jobs._id}`);
-            //       }}
-            //       className="border border-blue-400 p-5 rounded-xl bg-primary text-white font-bold"
-            //     >
-            //       View Details
-            //     </button>
-            //     {userDetails?.role === "company" ? (
-            //       <>
-            //         <FaRegEdit
-            //           size={25}
-            //           onClick={() => {
-            //             if (userDetails?._id == jobs?.createdBy) {
-            //               // Navigate to the edit page if user is authorized
-            //               navigate(`/jobs/editJob/${jobs._id}`);
-            //             } else {
-            //               // Show an error toast if user is not authorized
-            //               toast.error("Unauthorized", {
-            //                 position: "top-right",
-            //                 autoClose: 1500,
-            //                 hideProgressBar: false,
-            //                 closeOnClick: true,
-            //                 draggable: true,
-            //                 progress: undefined,
-            //                 theme: "dark",
-            //               });
-            //             }
-            //           }}
-            //           className="hover:"
-            //         />
-            //         <MdDelete
-            //          onClick={() => {
-            //           if (jobs.createdBy !== userDetails._id) {
-
-            //             toast.error("Unauthorized", {
-            //               position: "top-right",
-            //               autoClose: 1500,
-            //               hideProgressBar: false,
-            //               closeOnClick: true,
-            //               draggable: true,
-            //               progress: undefined,
-            //               theme: "dark",
-            //             });
-                        
-            //           } else {
-            //             return handleDelete(jobs._id);
-            //           }}}
-            //           size={25}
-            //         />
-            //       </>
-            //     ) : null}
-            //   </div>
-            // </div>
+          
           );
         })}
 
@@ -231,12 +159,12 @@ export default function BrowseJobs() {
 
     // sdds
   }, [params.search]);
-  console.log(params.search);
+  // console.log(params.search);
 
   function handleChange(e) {
     setInput({ ...input, [e.target.name]: e.target.value });
     setSearchParams(currentSearchParams);
-    console.log(currentSearchParams.get("search"));
+    // console.log(currentSearchParams.get("search"));
   }
 
   function handleDelete(id) {
@@ -250,7 +178,7 @@ export default function BrowseJobs() {
       .then((res) => {
         setjobs((jobs) => jobs.filter((job) => job._id !== id));
         toast.success("Deleted Successfully");
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((Err) => console.log(Err));
   }

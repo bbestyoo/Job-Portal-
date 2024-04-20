@@ -9,10 +9,10 @@ export function PopularCategories() {
 
   useEffect(() => {
     axios
-      .get("https://job-portal-server-tvif.onrender.com/api/getHotJob")
+      .get("http:localhost:8000/api/getHotJob")
       .then((res) => {
         setHotJobs(res.data);
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -58,9 +58,9 @@ export function PopularJobs() {
 
   useEffect(() => {
     axios
-      .get("https://job-portal-server-tvif.onrender.com/api/getJob")
+      .get("https://job-portal-ten-alpha.vercel.app/")
       .then((res) => {
-        console.log(res.data.jobs);
+        // console.log(res.data.jobs);
         setJobs(res.data.jobs);
       })
       .catch((err) => {

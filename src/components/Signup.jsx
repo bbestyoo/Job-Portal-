@@ -35,7 +35,7 @@ function Signup() {
   // };
 
 
-  console.log(role);
+  // console.log(role);
   function handleRoleChange(e) {
     if (e.target.value === "company") {
       setRole("company");
@@ -45,7 +45,7 @@ function Signup() {
   }
   function handleImage(e) {
     // console.log(fd);
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     setProfileImage(e.target.files[0]);
   }
 
@@ -59,24 +59,7 @@ function Signup() {
 
     const fd = new FormData();
 
-    // fd.append("username", userData.username);
-    // fd.append("email", userData.email);
-    // fd.append("password", userData.password);
-    // fd.append("repeat_password", userData.repeat_password);
-    // fd.append("role", userData.role);
-    // fd.append("website", userData.website);
-    // fd.append("image", profileImage);
-
-    /*
-    fd.append("username", e.target.username.value);
-    fd.append("email", e.target.email.value);
-    fd.append("password", e.target.password.value);
-    fd.append("repeat_password", e.target.repeat_password.value);
-    fd.append("role", e.target.role.value);
-    fd.append("image", profileImage);
-
-    */
-    // fd.append("website", e.target.website.value);
+   
     if (role === "company") {
       fd.append("username", e.target.username.value);
       fd.append("email", e.target.email.value);
@@ -95,9 +78,9 @@ function Signup() {
     }
 
     // console.log(fd.get("username"));
-    console.log(...fd);
+    // console.log(...fd);
     axios
-      .post("https://job-portal-server-tvif.onrender.com/api/signup", fd)
+      .post("https://job-portal-ten-alpha.vercel.app/", fd)
       .then((res) => {
         toast.success("Signup Success");
         // console.log(res.data);

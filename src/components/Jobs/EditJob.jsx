@@ -28,15 +28,17 @@ function JobEdit() {
 
   useEffect(() => {
     axios
-      .get(`https://job-portal-server-tvif.onrender.com/api/getJobById/${id}`)
+      .get(`http://localhost:8000/api/getJobById/${id}`)
       .then((res) => {
         setJobData(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => 
+      console.log(err)
+    );
   }, [id]);
 
-  console.log(jobData);
+  // console.log(jobData);
   function handleChange(e) {
     setJobData({ ...jobData, [e.target.name]: e.target.value });
   }
@@ -44,11 +46,11 @@ function JobEdit() {
     setJobData({ ...jobData, tags: [...jobData.tags, ""] });
   }
   function handleCreateJob(e) {
-    console.log(jobData);
+    // console.log(jobData);
     const { deadline_date } = jobData;
     deadline_date.toString();
     deadline_date.split(0, 10);
-    console.log(deadline_date);
+    // console.log(deadline_date);
     const updatedJob = { ...jobData, deadline_date };
     e.preventDefault();
     axios
@@ -59,12 +61,12 @@ function JobEdit() {
       })
       .then((res) => {
         toast.success("Updated Successfully");
-        console.log(res.data);
+        // console.log(res.data);
         setJobData(initialState);
         navigate("/jobs");
       })
       .catch((err) => {
-        console.log(err.response?.data);
+        // console.log(err.response?.data);
         if (err.response) {
           const errorArray = err.response.data;
           let temp = {};

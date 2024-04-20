@@ -17,7 +17,7 @@ export default function JobDetails() {
 
   const params = useParams();
   const jobId = params.id;
-  console.log(params);
+  // console.log(params);
 
   function handleClick (){
     if (userDetails) {
@@ -50,7 +50,7 @@ export default function JobDetails() {
     axios
       .get(`https://job-portal-server-lime.vercel.app/api/getJobById/${jobId}`)
       .then((res) => {
-        console.log("job indasdv",res.data);
+        // console.log("job indasdv",res.data);
         setJobById(res.data);
       })
       .catch((err) => {

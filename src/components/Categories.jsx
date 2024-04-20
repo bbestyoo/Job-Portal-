@@ -19,7 +19,7 @@ export  function SingleCategory() {
 
     axios.get(`https://job-portal-server-tvif.onrender.com/api/getJob${category}`)
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
       setJob(res.data.jobs[0].data)
     })
     .catch((err)=>{
@@ -73,14 +73,14 @@ export function Category({ Category, logo }) {
   return (
     <Link
       to={`/jobs?category=${Category}`}
-      className=" shadow-md p-5 flex items-center bg-white rounded-lg md:w-52 sm:w-48"
+      className=" shadow-md p-5 flex gap-5 w-48 items-center bg-white rounded-lg md:w-52 sm:w-48"
     >
       <img
         className=" w-8 md:w-14 bg-secondary p-2 rounded-full "
         src={logo}
         alt="sda"
       />
-      <p className=" mt-3 text-[8px] sm:text-[10px] md:text-sm font-semibold text-black">
+      <p className="text-md mt-3 text-[8px] sm:text-[10px] md:text-sm font-semibold text-black">
         {cat}
       </p>
     </Link>

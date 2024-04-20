@@ -10,7 +10,7 @@ export default function CreateJob() {
 
   const navigate = useNavigate()
   const userDetail = useSelector((state) => state.user.value);
-  console.log(userDetail)
+  // console.log(userDetail)
   const [formData, setFormData] = useState({
     title: '',
     companyName: '',
@@ -37,14 +37,14 @@ export default function CreateJob() {
     const updatedJob = { ...formData };
     e.preventDefault();
     // You can perform actions with the form data here
-    console.log('Form Data:', formData);
+    // console.log('Form Data:', formData);
     // const { deadline_date } = formData;
     // deadline_date.toString();
     // deadline_date.split(0, 10);
     // console.log(deadline_date);
     // const updatedJob = { ...jobData, deadline_date };
     axios
-      .post("https://job-portal-server-tvif.onrender.com/api/createJob", updatedJob, { 
+      .post("https://job-portal-ten-alpha.vercel.app/", updatedJob, { 
         headers: {
           Authorization: `bearer ${localStorage.getItem("token")}`, 
         },
@@ -57,7 +57,7 @@ export default function CreateJob() {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         // if (err.response) {
         //   const errorArray = err.response.data;
         //   let temp = {};
@@ -71,7 +71,7 @@ export default function CreateJob() {
   }
   return (
     <>
-      <div className="w-1/2 mx-auto mt-8 p-7 px-10 rounded shadow mb-40 bg-footer">
+      <div className="w-1/2 mx-auto mt-16 p-7 px-10 rounded shadow mb-40 bg-footer">
         <h2 className="text-3xl font-semibold mb-10">Create A Job</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -263,7 +263,6 @@ export default function CreateJob() {
           </button>
         </form>
       </div>
-      <Footer/>
     </>
   );
 }

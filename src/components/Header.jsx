@@ -44,7 +44,7 @@ export default function Header() {
 
   function handleMenu(){
     setMenu((prev)=> !prev)
-  console.log("menu",menu)
+  // console.log("menu",menu)
 
   }
 
@@ -56,7 +56,7 @@ export default function Header() {
         className={`  fixed w-full bg-${menu === false? "white shadow-md" : "transparent" } bg-${scrolling === true ? "white shadow-md" : "transparent"} transition-all duration-900 ease-in-out ${
           scrolling && 'opacity-100' } `}>
           
-        <nav className=" flex-col py-7 px-10 md:gap-28 md:py-4 md:pl-16 md:pr-10 md:p-14  sm:flex sm:flex-col xl:flex xl:flex-row  md:flex md:flex-row ">
+        <nav className=" flex-col py-7 px-10 md:gap-28 md:py-4 md:pl-16 md:pr-10 md:p-14  sm:flex sm:flex-col xl:flex xl:flex-row md:w-full  md:flex md:flex-row ">
           <div className="flex justify-between">
 
           <ul className="w-full">
