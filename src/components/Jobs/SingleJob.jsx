@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const url = "http://localhost:8000/";
+const url = "https://job-portal-server-tvif.onrender.com/";
 
 
 export const SingleJob = ({jobs, handleDelete}) => {

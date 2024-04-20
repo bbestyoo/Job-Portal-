@@ -22,6 +22,7 @@ export const ProtectedRoutes = ({ element }) => {
       }
     } else {
       console.log("userDetails object is empty or undefined");
+      console.log("dont BS")
       navigate("/");
     }
   }, [userDetails]);

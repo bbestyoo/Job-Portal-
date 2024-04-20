@@ -28,7 +28,7 @@ function JobEdit() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/getJobById/${id}`)
+      .get(`https://job-portal-server-tvif.onrender.com/api/getJobById/${id}`)
       .then((res) => {
         setJobData(res.data);
         console.log(res.data);
@@ -52,7 +52,7 @@ function JobEdit() {
     const updatedJob = { ...jobData, deadline_date };
     e.preventDefault();
     axios
-      .put(`http://localhost:8000/api/editJob/${id}`, updatedJob, {
+      .put(`https://job-portal-server-tvif.onrender.com/api/editJob/${id}`, updatedJob, {
         headers: {
           Authorization: `bearer ${localStorage.getItem("token")}`,
         },
@@ -394,7 +394,7 @@ function JobEdit() {
             </div>
           </div>
         </>
-      )}
+      
     </>
   );
 }

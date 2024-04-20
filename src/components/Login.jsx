@@ -27,7 +27,7 @@ function Login() {
 
     e.preventDefault()
     console.log("gg",e.target.email.value,e.target.password.value)
-    axios.post("http://localhost:8000/api/login", {
+    axios.post("https://job-portal-server-tvif.onrender.com/api/login", {
       email: e.target.email.value,
       password: e.target.password.value
 

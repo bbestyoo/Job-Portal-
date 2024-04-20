@@ -22,7 +22,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { SingleJob } from "./Jobs/SingleJob";
 import { SearchedJobs } from "./Jobs/SearchedJobs";
 
-const url = "http://localhost:8000/";
+const url = "https://job-portal-server-tvif.onrender.com/";
 
 export function PopularCategories() {
 
@@ -57,7 +57,7 @@ export function PopularJobs() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/getJob")
+      .get("https://job-portal-server-tvif.onrender.com/api/getJob")
       .then((res) => {
         console.log("popularjobsasdasd", res.data.jobs[0].data);
         const allJobs = res.data.jobs[0].data;
@@ -73,7 +73,7 @@ export function PopularJobs() {
 
     setRerenderJobs(true)
 
-    axios.delete(`http://localhost:8000/api/deleteJob/${Jobs_id}`,{
+    axios.delete(`https://job-portal-server-tvif.onrender.com/api/deleteJob/${Jobs_id}`,{
       headers: {
         Authorization: `bearer ${localStorage.getItem("token")}`,
       },
@@ -217,7 +217,7 @@ export default function BrowseJobs() {
     setIsEmpty(false);
     // Aos.init({ duration: 1000 });
     axios
-      .get(`http://localhost:8000/api/getJob/${params.search}`)
+      .get(`https://job-portal-server-tvif.onrender.com/api/getJob/${params.search}`)
       .then((res) => {
         setjobs(res.data.jobs[0].data);
         console.log("resdata",res.data.jobs[0])
@@ -242,7 +242,7 @@ export default function BrowseJobs() {
   function handleDelete(id) {
     console.log("this is hadnle delete");
     axios
-      .delete(`http://localhost:8000/api/deleteJob/${id}`, {
+      .delete(`https://job-portal-ten-alpha.vercel.app/api/deleteJob/${id}`, {
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`,
         },

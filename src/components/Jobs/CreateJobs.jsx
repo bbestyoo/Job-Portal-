@@ -44,7 +44,7 @@ export default function CreateJob() {
     // console.log(deadline_date);
     // const updatedJob = { ...jobData, deadline_date };
     axios
-      .post("http://localhost:8000/api/createJob", updatedJob, { 
+      .post("https://job-portal-server-tvif.onrender.com/api/createJob", updatedJob, { 
         headers: {
           Authorization: `bearer ${localStorage.getItem("token")}`, 
         },

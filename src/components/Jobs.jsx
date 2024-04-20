@@ -9,7 +9,7 @@ export function PopularCategories() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/getHotJob")
+      .get("https://job-portal-server-tvif.onrender.com/api/getHotJob")
       .then((res) => {
         setHotJobs(res.data);
         console.log(res);
@@ -58,7 +58,7 @@ export function PopularJobs() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/getJob")
+      .get("https://job-portal-server-tvif.onrender.com/api/getJob")
       .then((res) => {
         console.log(res.data.jobs);
         setJobs(res.data.jobs);

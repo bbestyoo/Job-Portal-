@@ -10,7 +10,7 @@ function Chart() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/chart/${userDetail?.role}`, {
+      .get(`https://job-portal-server-lime.vercel.app/api/chart/${userDetail?.role}`, {
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`,
         },

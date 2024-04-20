@@ -48,7 +48,7 @@ export default function JobDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/getJobById/${jobId}`)
+      .get(`https://job-portal-server-lime.vercel.app/api/getJobById/${jobId}`)
       .then((res) => {
         console.log("job indasdv",res.data);
         setJobById(res.data);

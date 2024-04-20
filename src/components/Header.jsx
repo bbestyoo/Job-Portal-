@@ -12,7 +12,7 @@ import { RxCross2 } from "react-icons/rx";
 
 // import Modal from "react-modal"
 
-const url="http://localhost:8000/"
+const url="https://job-portal-server-tvif.onrender.com/"
 
 
 export default function Header() {

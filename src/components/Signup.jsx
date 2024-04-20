@@ -97,7 +97,7 @@ function Signup() {
     // console.log(fd.get("username"));
     console.log(...fd);
     axios
-      .post("http://localhost:8000/api/signup", fd)
+      .post("https://job-portal-server-tvif.onrender.com/api/signup", fd)
       .then((res) => {
         toast.success("Signup Success");
         // console.log(res.data);

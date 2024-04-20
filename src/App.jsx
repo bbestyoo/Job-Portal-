@@ -20,7 +20,7 @@ function App() {
       try {
         if (token) {
           console.log("yoyo");
-          const response = await axios.get("http://localhost:8000/api/User", {
+          const response = await axios.get("https://job-portal-server-tvif.onrender.com/api/User", {
             headers: {
               authorization: `bearer ${token}`,
             },

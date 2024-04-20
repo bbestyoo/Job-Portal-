@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate,  } from "react-router-dom";
 
 
 
-const url = "http://localhost:8000/"
+const url = "https://job-portal-server-tvif.onrender.com/"
 export  function SingleCategory() {
 
   const [getJobs,setJob] = useState([])
@@ -17,7 +17,7 @@ export  function SingleCategory() {
 
   useEffect(()=>{
 
-    axios.get(`http://localhost:8000/api/getJob${category}`)
+    axios.get(`https://job-portal-server-tvif.onrender.com/api/getJob${category}`)
     .then((res)=>{
       console.log(res)
       setJob(res.data.jobs[0].data)

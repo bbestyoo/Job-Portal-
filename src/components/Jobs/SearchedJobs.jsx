@@ -1,6 +1,5 @@
 
 
-
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import React from 'react'
@@ -8,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 
-const url = "http://localhost:8000/";
+const url = "https://job-portal-server-tvif.onrender.com";
 
 
 export const SearchedJobs = ({job, userDetails, handleDelete}) => {
