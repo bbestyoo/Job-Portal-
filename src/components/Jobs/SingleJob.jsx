@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const url = "https://job-portal-ten-alpha.vercel.app/";
+const url = "";
 
 
 export const SingleJob = ({jobs, handleDelete}) => {

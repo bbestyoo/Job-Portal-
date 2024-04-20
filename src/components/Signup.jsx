@@ -80,7 +80,7 @@ function Signup() {
     // console.log(fd.get("username"));
     // console.log(...fd);
     axios
-      .post("https://job-portal-ten-alpha.vercel.app/", fd)
+      .post("https://job-portal-server-tvif.onrender.com/api/signup", fd)
       .then((res) => {
         toast.success("Signup Success");
         // console.log(res.data);
