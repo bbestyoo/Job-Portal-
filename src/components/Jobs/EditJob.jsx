@@ -31,7 +31,7 @@ function JobEdit() {
       .get(`https://job-portal-server-tvif.onrender.com/api/getJobById/${id}`)
       .then((res) => {
         setJobData(res.data);
-        // console.log(res.data);
+        console.log(res.data);
       })
       .catch((err) => 
       console.log(err)

@@ -26,7 +26,7 @@ function Login() {
   function handlesubmit(e){
 
     e.preventDefault()
-    // console.log("gg",e.target.email.value,e.target.password.value)
+    console.log("gg",e.target.email.value,e.target.password.value)
     axios.post("https://job-portal-server-tvif.onrender.com/api/login", {
       email: e.target.email.value,
       password: e.target.password.value
@@ -34,8 +34,8 @@ function Login() {
     })
     .then((res) =>{
       
-      // console.log("data",res.data)
-      // console.log("user",res.data.user)
+      console.log("data",res.data)
+      console.log("user",res.data.user)
 
       dispatch(setUserDetails(res.data.user))      //dispatch calls a reducer that may take a state res.data.user is a state jun xai state.value ma basxa ra action xai setUserDetails garne bayo  action
       localStorage.setItem("token",res.data.token)
@@ -44,14 +44,14 @@ function Login() {
       
     })
     .catch((err)=>{
-      // console.log(err.response.data)
+      console.log(err.response.data)
 
-      // if(err.response.data.msg){
-      //   console.log("ehh")
-      // }
-      // else{
+      if(err.response.data.msg){
+        console.log("ehh")
+      }
+      else{
 
-      // }
+      }
 
 
     })

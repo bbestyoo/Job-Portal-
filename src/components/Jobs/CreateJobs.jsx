@@ -57,16 +57,17 @@ export default function CreateJob() {
         navigate("/");
       })
       .catch((err) => {
-        // console.log(err);
-        // if (err.response) {
-        //   const errorArray = err.response.data;
-        //   let temp = {};
-        //   errorArray.forEach((err) => {
-        //     temp[err.path] = `*${err.path} is required`;
-        //   });
+        console.log(err);
+        if (err.response) {
+          const errorArray = err.response.data;
+          let temp = {};
+          errorArray.forEach((err) => {
+            temp[err.path] = `*${err.path} is required`;
+          });
 
-        //   setErrorData(temp);
+          setErrorData(temp);
         }
+      }
       );
   }
   return (

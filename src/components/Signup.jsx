@@ -44,8 +44,8 @@ function Signup() {
     }
   }
   function handleImage(e) {
-    // console.log(fd);
-    // console.log(e.target.files[0]);
+    console.log(fd);
+    console.log(e.target.files[0]);
     setProfileImage(e.target.files[0]);
   }
 
@@ -83,15 +83,15 @@ function Signup() {
       .post("https://job-portal-server-tvif.onrender.com/api/signup", fd)
       .then((res) => {
         toast.success("Signup Success");
-        // console.log(res.data);
-        // console.log("hello bro");
+        console.log(res.data);
+        console.log("hello bro");
 
         navigate("/login");
       })
       .catch((Err) => {
-        // console.log(Err);
+        console.log(Err);
         setError({});
-        // console.log("hello error");
+        console.log("hello error");
         //Err.response.data.errors[0].msg)
         if (Err.response?.data.errors) {
           const errorArray = Err.response.data.errors;
