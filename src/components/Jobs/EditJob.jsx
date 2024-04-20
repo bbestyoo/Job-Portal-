@@ -28,7 +28,7 @@ function JobEdit() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/getJobById/${id}`)
+      .get(`https://job-portal-ten-alpha.vercel.app/getJobById/${id}`)
       .then((res) => {
         setJobData(res.data);
         // console.log(res.data);
