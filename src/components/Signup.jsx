@@ -44,8 +44,9 @@ function Signup() {
     }
   }
   function handleImage(e) {
-    console.log(fd);
-    console.log(e.target.files[0]);
+    // console.log(fd);
+    console.log("hereeeeeeeeeeeeee")
+    console.log("Asdasda",e.target.files[0]);
     setProfileImage(e.target.files[0]);
   }
 
@@ -76,9 +77,9 @@ function Signup() {
       fd.append("role", e.target.role.value);
       fd.append("image", profileImage || "");
     }
-
+    console.log("****",profileImage)
     // console.log(fd.get("username"));
-    // console.log(...fd);
+    console.log(...fd);
     axios
       .post("https://job-portal-server-tvif.onrender.com/api/signup", fd)
       .then((res) => {

@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const url = "";
+const url = "https://job-portal-server-tvif.onrender.com";
 
 
 export const SingleJob = ({jobs, handleDelete}) => {
@@ -22,13 +22,14 @@ export const SingleJob = ({jobs, handleDelete}) => {
 
   return (
     <>
+
          <div
               key={jobs._id}
-              className="flex bg-white gap-3 border border-gray-400  rounded-lg p-2 w-full items-center h-fit mb-7 bg-extra "
+              className="flex flex-col md:flex md:flex-row bg-white gap-3 border border-gray-400  rounded-lg p-2 w-full items-center h-fit mb-7 bg-extra "
             >
               <img
                 className="h-20 rounded-lg"
-                src={`${url}${jobs.creatorPic}`}
+                src={`${url}/${jobs.creatorPic}`}
                 alt="oop"
               />
               <div className="mr-auto text-left px-6">

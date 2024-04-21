@@ -97,6 +97,8 @@ export function PopularJobs() {
         <p className="text-3xl font-medium mb-10">Popular Jobs</p>
         {getJobs?.map((jobs) => {
           return (
+            <div className="grid grid-cols-1">
+
             <SingleJob
               handleDelete={handleDelete}
               key={jobs._id}
@@ -104,7 +106,7 @@ export function PopularJobs() {
               jobs={jobs}
             
             />
-          
+            </div>
           );
         })}
 
