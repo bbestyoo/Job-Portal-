@@ -204,9 +204,7 @@ export default function CreateJob() {
                   <option defaultChecked value={"it-computer"}>
                     IT/Computer
                   </option>
-                  <option value={"human-resource"}>
-                    Human Resource
-                  </option>
+                 
                   <option value={"design-creative"}>
                     Design-Creative
                   </option>

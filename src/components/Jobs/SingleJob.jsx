@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const url = "https://job-portal-server-tvif.onrender.com";
+const url = "https://job-portal-server-tvif.onrender.com/";
 
 
 export const SingleJob = ({jobs, handleDelete}) => {
@@ -29,7 +29,7 @@ export const SingleJob = ({jobs, handleDelete}) => {
             >
               <img
                 className="h-20 rounded-lg"
-                src={`${url}/${jobs.creatorPic}`}
+                src={`${url}${jobs.creatorPic}`}
                 alt="oop"
               />
               <div className="mr-auto text-left px-6">
