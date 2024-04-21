@@ -172,7 +172,7 @@ export default function BrowseJobs() {
   function handleDelete(id) {
     console.log("this is hadnle delete");
     axios
-      .delete(`https://job-portal-ten-alpha.vercel.app/api/deleteJob/${id}`, {
+      .delete(`https://job-portal-server-tvif.onrender.com/api/deleteJob/${id}`, {
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`,
         },
