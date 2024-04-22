@@ -57,7 +57,7 @@ export function PopularJobs() {
 
   useEffect(() => {
     axios
-      .get("https://job-portal-server-tvif.onrender.com/api/getJob")
+      .get("https://job-portal-server-tvif.onrender.com/api/getPopJobs")
       .then((res) => {
         console.log("popularjobsasdasd", res.data.jobs[0].data);
         const allJobs = res.data.jobs[0].data;
