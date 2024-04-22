@@ -59,8 +59,9 @@ export function PopularJobs() {
     axios
       .get("https://job-portal-server-tvif.onrender.com/api/getPopJobs")
       .then((res) => {
-        console.log("popularjobsasdasd", res.data.jobs.data);
-        const allJobs = res.data.jobs[0].data;
+        console.log(res)
+        console.log("popularjobsasdasd", res.data);
+        const allJobs = res.data;
         setJobs(allJobs);
       })
       .catch((err) => {
