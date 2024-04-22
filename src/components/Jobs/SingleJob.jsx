@@ -14,7 +14,7 @@ const url = "https://job-portal-server-tvif.onrender.com/";
 
 export const SingleJob = ({jobs, handleDelete}) => {
 
-    
+    console.log("picccc",jobs.creatorPic)
     const navigate = useNavigate();
     const userDetails = useSelector((state) => state.user.value);
     // console.log("user",userDetails)

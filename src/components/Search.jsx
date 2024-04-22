@@ -55,7 +55,7 @@ export default function Search({ onSearch }) {
             searchBox ? "justify-between text-xl" : "gap-3"
           } flex h-full max-w-full items-center `}
         >
-          <IoSearch className="text-4xl transition-transform transform hover:scale-110" />
+          <IoSearch className="text-4xl transition-transform transform hover:scale-110 z-1" />
           <input
             onChange={handleOnchange}
             onFocus={handleOnFocus}
